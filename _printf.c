@@ -1,49 +1,53 @@
-#include "holberton.h"
+#include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
+#include "holberton.h"
 /**
-* _printf - main function to print in console
-* @format: array to print and check type
-* Return: count of character printed
-**/
+ * _printf - print anything
+ * @format: arguments
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
-	int count = -1;
+	va_list argument;
+	const char *g;
+	int num = 0;
 
-	if (format != NULL)
+	if (format == NULL)
+		return (-1);
+	va_start(argument, format);
+	for (g = format; *g; g++)
 	{
-		int g;
-		va_list ar_list;
-		int (*o)(va_list);
-
-		va_start(ar_list, format);
-
-		if (format[0] == '%' && format[1] == '\0')
-			return (-1);
-
-		count = 0;
-
-		for (g = 0; format[g] != '\0'; g++)
+		if (*g == '%' && *g + 1 == '%')
 		{
-			if (format[g] == '%')
-			{
-				if (format[g + 1] == '%')
-				{
-					count += _putchar(format[g]);
-					g++;
-				}
-				else if (format[g + 1] != '\0')
-				{
-					o = get_func(format[g + 1]);
-					count += (o ? o(ar_list) : _putchar(format[g]) + _putchar(format[i + 1]));
-					g++;
-				}
-			}
-			else
-				count += _putchar(format[g]);
+			_putchar(*g), num++;
+			continue;
 		}
-		va_end(ar_list);
+		else if (*g == '%' && *g + 1 != '%')
+		{
+			switch (*++g)
+			{
+				case 's':
+					num += fun_string(argument);
+					break;
+				case 'c':
+					num += fun_character(argument);
+					break;
+				case '%':
+					_putchar('%'), num++;
+					break;
+				case '\0':
+					return (-1);
+				case 'i':
+				case 'd':
+					num += fun_integer(argument);
+					break;
+				default:
+					_putchar('%'), _putchar(*g), num += 2;
+			}
+		}
+		else
+			_putchar(*g), num++;
 	}
-
-	return (count);
+va_end(argument);
+return (num);
 }
