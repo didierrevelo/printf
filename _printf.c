@@ -1,4 +1,3 @@
-#include"holberton.h"
 /**
  * prin_char - print char.
  * @valist: char to print.
