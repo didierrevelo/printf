@@ -1,30 +1,53 @@
+#include <stdlib.h>
+#include <stdarg.h>
+#include "holberton.h"
 /**
- * prin_char - print char.
- * @valist: char to print.
+ * _printf - print anything
+ * @format: arguments
+ * Return: number of characters printed
  */
-void prin_char(va_list valist)
+int _printf(const char *format, ...)
 {
-	printf("%c", va_arg(valist, int));
+	va_list argument;
+	const char *g;
+	int num = 0;
+
+	if (format == NULL)
+		return (-1);
+	va_start(argument, format);
+	for (g = format; *g; g++)
+	{
+		if (*g == '%' && *g + 1 == '%')
+		{
+			_putchar(*g), num++;
+			continue;
+		}
+		else if (*g == '%' && *g + 1 != '%')
+		{
+			switch (*++g)
+			{
+				case 's':
+					num += fun_string(argument);
+					break;
+				case 'c':
+					num += fun_character(argument);
+					break;
+				case '%':
+					_putchar('%'), num++;
+					break;
+				case '\0':
+					return (-1);
+				case 'i':
+				case 'd':
+					num += fun_integer(argument);
+					break;
+				default:
+					_putchar('%'), _putchar(*g), num += 2;
+			}
+		}
+		else
+			_putchar(*g), num++;
+	}
+va_end(argument);
+return (num);
 }
-/**
- * prin_integer - print integer.
- * @valist: int to print.
- */
-void prin_integer(va_list valist)
-{
-	printf("%d", va_arg(valist, int));
-}
-/**
- * prin_float - print float.
- * @valist: float to print.
- */
-void prin_float(va_list valist)
-{
-	printf("%f", va_arg(valist, double));
-}
-/**
- * prin_string - print string.
- * @valist: string to print.
- */
-void prin_string(va_list valist)
-{
