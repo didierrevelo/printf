@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdarg.h>
 #include "holberton.h"
 /**
  * _printf - print anything
@@ -8,46 +6,21 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list argument;
-	const char *g;
-	int num = 0;
+	int num_char;
+	all_t l_funct[] = {
+		{"c", print_c},
+		{"s", print_s},
+		{"%", print_p},
+		{NULL, NULL}
+	};
+	va_list arg;
 
 	if (format == NULL)
-		return (-1);
-	va_start(argument, format);
-	for (g = format; *g; g++)
 	{
-		if (*g == '%' && *g + 1 == '%')
-		{
-			_putchar(*g), num++;
-			continue;
-		}
-		else if (*g == '%' && *g + 1 != '%')
-		{
-			switch (*++g)
-			{
-				case 's':
-					num += fun_string(argument);
-					break;
-				case 'c':
-					num += fun_character(argument);
-					break;
-				case '%':
-					_putchar('%'), num++;
-					break;
-				case '\0':
-					return (-1);
-				case 'i':
-				case 'd':
-					num += fun_integer(argument);
-					break;
-				default:
-					_putchar('%'), _putchar(*g), num += 2;
-			}
-		}
-		else
-			_putchar(*g), num++;
+		return (-1);
 	}
-va_end(argument);
-return (num);
+	va_star(arg, format);
+	num_char = compar(format, l_funct, arg);
+	va_end (arg);
+	return (num_char);
 }
