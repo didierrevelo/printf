@@ -15,7 +15,7 @@ for (a = 0; format[a] != '\0'; a++)
 {
 if (format[a] == '%')
 {
-for (b = 0; l_funct[b].enter != NULL; b++) 
+for (b = 0; l_funct[b].enter != NULL; b++)
 {
 if (format[a + 1] == l_funct[b].enter[0])
 {
