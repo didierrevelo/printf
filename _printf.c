@@ -20,6 +20,6 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 	num_char = compar(format, l_funct, arg);
-	va_end (arg);
+	va_end(arg);
 	return (num_char);
 }
