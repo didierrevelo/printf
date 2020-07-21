@@ -6,8 +6,8 @@
  */
 int print_c(va_list ls)
 {
-_put_char(va_arg(ls, int));
-return (1);
+            _put_char(va_arg(ls, int));
+            return (1);
 }
 
 /**
@@ -17,17 +17,17 @@ return (1);
  */
 int print_s(va_list ls)
 {
-int a;
-char *s;
+            int a;
+            char *s;
 
-s = va_arg(ls, char *);
-if (s == NULL)
-s = "(null)";
-for (a = 0; s[a] != '\0'; a++)
+            s = va_arg(ls, char *);
+            if (s == NULL)
+            s = "(null)";
+            for (a = 0; s[a] != '\0'; a++)
 {
-_put_char(s[a]);
+        _put_char(s[a]);
 }
-return (a);
+    return (a);
 }
 /**
  *print_p - print porcent
@@ -36,6 +36,6 @@ return (a);
  */
 int print_p(__attribute__((unused))va_list ls)
 {
-_put_char('%');
-return (1);
+    _put_char('%');
+    return (1);
 }
