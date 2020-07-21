@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * _printf - print anything
- * @format: arguments
+ * @format: argument
  * Return: number of characters printed
  */
 int _printf(const char *format, ...)
