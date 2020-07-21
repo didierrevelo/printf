@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 
 	if (format != NULL)
 	{
-		int ;
+		int g;
 		va_list ar_list;
 		int (*o)(va_list);
 
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 				else if (format[g + 1] != '\0')
 				{
 					o = get_func(format[g + 1]);
-					count += (o ? o(ar_list) : _putchar(format[g]) + _putchar(format[i + 1]));
+					count += (o ? o(ar_list) : _putchar(format[g]) + _putchar(format[g + 1]));
 					g++;
 				}
 			}
