@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	va_star(arg, format);
+	va_start(arg, format);
 	num_char = compar(format, l_funct, arg);
 	va_end (arg);
 	return (num_char);
