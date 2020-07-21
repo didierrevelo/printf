@@ -45,7 +45,8 @@ int compar(const char *format, all_t l_funct[], va_list arg)
             d++;
         }
         
-    }return (d);
+    }
+        return (d);
     
     
 }
