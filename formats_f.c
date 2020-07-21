@@ -36,6 +36,6 @@ int print_s(va_list ls)
  */
 int print_p(__attribute__((unused))va_list ls)
 {
-    _put_char('%');
-    return (1);
+_put_char('%');
+return (1);
 }

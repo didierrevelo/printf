@@ -7,7 +7,7 @@ _printf -- formatted output
 _printf [num_char ...]
 .SH DESCRIPTION
 _printf function formats and prints its num_char, after the first, under control of the format.
-The prototype of _prinft works with a constant char pointer format which contains four types of objects: 
+The prototype of _prinft works with a constant char pointer format which contains four types of objects:
 strings, which are simply copied to standard output, character escape sequences which are copied to the standar output, digits and integer, which work with a
 loop to get the numbers and format specifications, each of which causes printing of the next successive argument.
 \n
@@ -27,6 +27,6 @@ default - get the other arguments of the input
 .SH SEE ALSO
 _PRINTF(1)
 .SH BUGS
-There is a bug when _printf tried to print special character like '%'. 
+There is a bug when _printf tried to print special character like '%'.
 .SH AUTHOR
 Didier Revelo (1829@holbertonschool.com) and Gustavo Tovar Cabrera (1823@holbertonschool.com)
