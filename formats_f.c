@@ -39,3 +39,15 @@ int print_p(__attribute__((unused))va_list ls)
 _put_char('%');
 return (1);
 }
+/**
+ *print_i - print int
+ *@ls: arguments
+ *Return: numbers print
+ */
+int print_i(va_list ls)
+{
+    int numbers;
+
+    numbers = p_number(ls);
+    return (numbers);
+}
