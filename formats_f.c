@@ -52,38 +52,23 @@ int numbers;
 numbers = p_number(ls);
 return (numbers);
 }
+
 /**
- * p_number - print numbers
+ * print_un_int - print unsigned int
  * @lisa: arguments
- * Return: print numbers
+ * Return: print unsigned int
  */
-int p_number(va_list lisa)
+int un_int(va_list lisa)
 {
-int a, b, c;
-unsigned int bers;
+unsigned int n;
 
-a = va_arg(lisa, int);
-b = 1;
-c = 0;
+n = va_arg(lisa, unsigned int);
 
-if (a < 0)
-{
-c += _put_char('-');
-bers = a * -1;
-}
-else
-{
-bers = a;
+if (n == 0)
+return (p_un_int(n));
+
+if (n < 1)
+return (-1);
+return (p_un_int(n));
 }
 
-while (bers / b > 9)
-b *= 10;
-
-while (b != 0)
-{
-c += _put_char('0' + bers / b);
-bers %= b;
-b /= 10;
-}
-return (bers);
-}
