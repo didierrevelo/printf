@@ -40,13 +40,13 @@ return (c);
  */
 int p_un_int(unsigned int bers)
 {
-int a, b;
+int a = 1, b = 0;
 unsigned int lisa = bers;
 
-for (a = 1; lisa / a > 9; )
+for (; lisa / a > 9; )
 a *= 10;
 
-for (a = 1; a != 0; )
+for (; a != 0; )
 {
 b += _put_char('0' + lisa / a);
 lisa %= a;

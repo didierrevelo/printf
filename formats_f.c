@@ -54,7 +54,7 @@ return (numbers);
 }
 
 /**
- * print_un_int - print unsigned int
+ * un_int - print unsigned int
  * @lisa: arguments
  * Return: print unsigned int
  */
