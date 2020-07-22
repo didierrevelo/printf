@@ -6,12 +6,10 @@
  */
 int p_number(va_list lisa)
 {
-int a, b, c;
+int a, b= 1, c = 0;
 unsigned int bers;
 
 a = va_arg(lisa, int);
-b = 1;
-c = 0;
 
 if (a < 0)
 {
@@ -32,7 +30,7 @@ c += _put_char('0' + bers / b);
 bers %= b;
 b /= 10;
 }
-return (bers);
+return (c);
 }
 
 /**
