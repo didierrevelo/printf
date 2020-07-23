@@ -1,7 +1,7 @@
  #include "holberton.h"
 /**
  *print_c - char print
- *@ls: arguments
+ *@ls: arguments. tipe int
  *Return: char print.
  */
 int print_c(va_list ls)
