@@ -3,7 +3,7 @@
  * compar - print a formated string
  * @format: char string contain
  * @l_funct: mix function
- * @arg: arguments
+ * @arg: arguments to function
  * Return: count char printed
  */
 int compar(const char *format, all_t l_funct[], va_list arg)
