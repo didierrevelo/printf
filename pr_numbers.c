@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * p_number - print numbers
- * @lisa: arguments
+ * @lisa: arguments variable
  * Return: print numbers
  */
 int p_number(va_list lisa)

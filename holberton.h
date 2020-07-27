@@ -8,7 +8,7 @@
 /**
  * struct all - this structure contine the the symbol of function.
  * @enter: operator function
- * @far: function linked
+ * @far: function linked. punter
  */
 typedef struct all
 {
