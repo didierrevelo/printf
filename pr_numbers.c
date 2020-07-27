@@ -6,7 +6,7 @@
  */
 int p_number(va_list lisa)
 {
-int a, b= 1, c = 0;
+int a, b = 1, c = 0;
 unsigned int bers;
 
 a = va_arg(lisa, int);

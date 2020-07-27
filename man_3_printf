@@ -22,7 +22,7 @@ ERROR;
 
 VALID;
 
-*if the letter is different from the % symbol, then print it 
+*if the letter is different from the % symbol, then print it
 
 *if the letter is the % symbol, then you should see that it is in the next position in the format.
 
