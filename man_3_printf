@@ -1,0 +1,93 @@
+\" Page for the _printf function
+
+Contact Didier Revelo or Gustavo Tovar Cabrera to correct any errors or misprints.
+
+.TH man 8 "20 July 2020" "1.0" "_prtinf man page"
+
+.SH NAME
+
+_printf... formatted output
+
+PROTOTYPE: int _printf(const char *format, ...);
+
+CONDITIONS:
+
+ERROR;
+
+*if the syntax of the printf is misspelled, return (-1).
+
+*If from an odd number of symbols %%% there is a NULL, return (-1)
+
+*if format is NULL, return (-1)
+
+VALID;
+
+*if the letter is different from the % symbol, then print it
+
+*if the letter is the % symbol, then you should see that it is in the next position in the format.
+
+EXAMPLES;
+
+*if there is a valid character to operate, then you must perform the function corresponding to the character and neither the % symbol nor the valid character must be printed.
+
+*If the character is not valid and is different from the % symbol, the % symbol and the invalid character must be printed.
+
+*If the character is equal to the % symbol, only one % symbol must be printed.
+
+*if you use the %s operation and the given string is NULL, you must print NULL
+
+SYNOPSIS OF SH
+
+...imprintf [character...]
+
+.SH DESCRIPTION
+
+The print function formats and prints your character, after the first one, under format control.
+
+The _prinft prototype works with a constant character pointer format containing four types of objects:
+
+strings, which are simply copied to the standard output, character escape sequences, which are copied to the standard output, digits and integers, which work with a
+
+to obtain the numbers and format specifications, each of which causes the printing of the following successive argument.
+
+\n
+
+The format string is reused as many times as necessary to satisfy the arguments. Any extra format specifications are evaluated with zero or the null string.
+
+OPTIONS .SH
+
+The printer validates each case to obtain the correct case as follows:
+
+\n
+
+s - get the chain of arguments
+
+\n
+
+c - obtain the nature of the arguments
+
+\n
+
+i - get the whole of the arguments
+
+\n
+
+d - get the digits of the arguments
+
+\n
+
+default - get the other arguments of the entry
+
+...SEE ALSO
+
+PRINTF(1)
+
+.SH BUGS
+
+There is a mistake when _printf tried to print a special character like '%'.
+
+.SH AUTHOR
+
+Didier Revelo (1829@holbertonschool.com) and Gustavo Tovar Cabrera (1823@holbertonschool.com)
+
+Translated with www.DeepL.com/Translator (free version)
